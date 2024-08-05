@@ -4,7 +4,7 @@ import { CiSquareChevLeft } from "react-icons/ci";
 
 const Mainblog = () => {
   return (
-    <section className="relative max-w-[1200px] m-auto  p-8 ">
+    <section className="relative max-w-[1240px] m-auto  p-8 ">
       <div>
         <img src="/images/mainImage.png" alt="photo" />
         <div className="absolute bottom-[85px] left-[43px] bg-white rounded-xl p-10 border-[1px] border-[#E8E8EA] w-[598px]">

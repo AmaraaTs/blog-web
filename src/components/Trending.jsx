@@ -26,7 +26,7 @@ const trendingBlogs = [
 
 const Trending = () => {
   return (
-    <section className="relative max-w-[1200px] m-auto  p-8 mt-9">
+    <section className="relative max-w-[1240px] m-auto  p-8 mt-9">
       <h5 className="text-2xl text-[#181A2A] font-bold">Trending</h5>
       <div className="mt-[30px]">
         <TrendingMap trendingBlog={trendingBlogs} />

@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 
 const Header = () => {
   return (
-    <header className="flex max-w-[1200px] m-auto justify-between p-8 items-center">
+    <header className="flex max-w-[1240px] m-auto justify-between p-8 items-center">
       <img src="./images/metaLogo.png" alt="logo" className="w-[158px] h-8" />
       <ul className="flex gap-10 text-base text-[#3B3C4A]">
         <li>

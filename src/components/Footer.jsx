@@ -7,7 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className=" bg-[#F6F6F7]">
-      <div className="max-w-[1200px] m-auto  p-8 mt-8">
+      <div className="max-w-[1240px] m-auto  p-8 mt-8">
         <div className="flex justify-between">
           <div className="w-[289px]">
             <h6 className="text-[#181A2A] text-lg font-semibold">About</h6>

@@ -60,7 +60,7 @@ const AllBlogs = [
 
 const AllBlog = () => {
   return (
-    <section className=" max-w-[1200px] m-auto  p-8 my-9">
+    <section className=" max-w-[1240px] m-auto  p-8 my-9">
       <h5 className="text-2xl text-[#181A2A] font-bold">All Blog Post</h5>
       <div className="flex justify-between mt-8 text-xs font-bold text-[#495057]">
         <ul className="flex gap-5">
