@@ -3,13 +3,23 @@ const AllBlogMap = ({ allBlog }) => {
     <div className="grid grid-cols-3 gap-5 mt-8">
       {allBlog.map((blog) => (
         <div className=" w-[392px]  p-4 border-[1px] border-[#E8E8EA] rounded-xl">
-          <img src={blog.img} alt="photo" className="h-[240px] w-[360px]" />
+          <img
+            src={blog.cover_image}
+            alt="photo"
+            className="h-[240px] w-[360px] rounded-md"
+          />
 
-          <h5 className="mt-6 text-[#4B6BFB]   text-sm ">{blog.category}</h5>
-          <p className="mt-4 text-2xl text-[#181A2A] font-semibold ">
-            {blog.text}
+          <div className="flex gap-3">
+            {blog.tag_list.map((t) => (
+              <h5 className="mt-6 text-[#4B6BFB] bg-[#4B6BFB0D] inline-block py-1 px-[10px] rounded-md text-sm truncate">
+                {t}
+              </h5>
+            ))}
+          </div>
+          <p className="mt-4 text-2xl text-[#181A2A] font-semibold truncate">
+            {blog.title}
           </p>
-          <p className="mt-5 text-[#97989F] text-base">{blog.date}</p>
+          <p className="mt-5 text-[#97989F] text-base">{blog.published_at}</p>
         </div>
       ))}
     </div>
