@@ -3,6 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -26,9 +27,9 @@ const Footer = () => {
           </div>
           <div>
             <ul className="gap-2 flex flex-col text-base text-[#3B3C4A]">
-              <li>Home</li>
-              <li>Blog</li>
-              <li>Contact</li>
+              <Link href="/">Home</Link>
+              <Link href="/blog">Blog</Link>
+              <Link href="/contact">Contact</Link>
             </ul>
           </div>
           <div className="flex gap-[26px]">

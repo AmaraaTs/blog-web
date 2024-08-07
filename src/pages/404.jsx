@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const notFound = () => {
   return (
@@ -10,9 +11,11 @@ const notFound = () => {
           We're sorry, This page is unknown or does not exist the page you are
           looking for.
         </p>
-        <button className="mt-5 bg-[#4B6BFB] rounded-[6px] px-4 py-[10px] text-white text-sm">
-          Back To Home
-        </button>
+        <Link href="/">
+          <button className="mt-5 bg-[#4B6BFB] rounded-[6px] px-4 py-[10px] text-white text-sm">
+            Back To Home
+          </button>
+        </Link>
       </div>
     </section>
   );

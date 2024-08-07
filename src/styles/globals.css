@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blog-detail img {
+  height: 462px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.blog-detail h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-style: italic; */
+  font-weight: bold;
+}

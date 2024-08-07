@@ -1,5 +1,6 @@
 import React from "react";
 import AllBlogMap from "./AllBlogMap";
+import Link from "next/link";
 
 // const AllBlogs = [
 //   {
@@ -83,7 +84,9 @@ const AllBlog = () => {
           <li>Technology</li>
           <li>Branding</li>
         </ul>
-        <div>View All</div>
+        <Link href="/blog">
+          <div>View All</div>
+        </Link>
       </div>
       <div className="mt-[30px]">
         <AllBlogMap allBlog={articles} />
