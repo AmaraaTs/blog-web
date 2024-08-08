@@ -12,10 +12,12 @@ const TrendingMap = ({ trendingBlog }) => {
             />
             <div className="absolute bg-black opacity-40 h-full w-full rounded-xl"></div>
           </div>
-          <div className="absolute bottom-7 left-7 right-7">
-            <h5 className="bg-[#4B6BFB] px-[10px] py-1 rounded-[6px] text-xs text-white inline-block">
-              {blog.tags}
-            </h5>
+          <div className="absolute bottom-7 left-7 right-7 truncate ">
+            {blog.tag_list.map((t) => (
+              <h5 className="bg-[#4B6BFB] px-[10px] py-1 rounded-[6px] text-xs text-white inline-block truncate mr-2">
+                {t}
+              </h5>
+            ))}
             <p className="mt-4 text-lg text-white font-semibold ">
               {blog.title}
             </p>
