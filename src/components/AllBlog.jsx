@@ -63,15 +63,19 @@ import { useEffect, useState } from "react";
 
 const AllBlog = () => {
   const [articles, setArticles] = useState([]);
+  const [count, setCount] = useState(9);
   const getArticleData = async () => {
-    const response = await fetch("https://dev.to/api/articles?per_page=9");
+    const response = await fetch(
+      `https://dev.to/api/articles?per_page=${count}`
+    );
     const data = await response.json();
     setArticles(data);
     // console.log("data", data)
   };
+
   useEffect(() => {
     getArticleData();
-  }, []);
+  }, [count]);
   return (
     <section className=" max-w-[1240px] m-auto  p-8 my-9">
       <h5 className="text-2xl text-[#181A2A] font-bold">All Blog Post</h5>
@@ -92,7 +96,10 @@ const AllBlog = () => {
         <AllBlogMap allBlog={articles} />
       </div>
       <div className="flex justify-center mt-[100px]">
-        <button className="border-[1px] border-[#696A754D] px-5 py-3 rounded-md text-base text-[#696A75]">
+        <button
+          className="border-[1px] border-[#696A754D] px-5 py-3 rounded-md text-base text-[#696A75]"
+          onClick={() => setCount(count + 3)}
+        >
           Load More
         </button>
       </div>

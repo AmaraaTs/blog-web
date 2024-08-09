@@ -22,6 +22,7 @@ const Header = () => {
           type="text"
           placeholder="Search"
           className="border border-solid bg-[#F4F4F5] rounded-[5px] pl-4 pt-2 pr-2 pb-2 w-[166px]"
+          // onChange={searchValue}
         />
         <CiSearch className="absolute left-[140px] bottom-[15px]" size={16} />
       </div>
