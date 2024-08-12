@@ -1,81 +1,11 @@
-import React from "react";
 import AllBlogMap from "./AllBlogMap";
 import Link from "next/link";
-
-// const AllBlogs = [
-//   {
-//     img: "/images/blog-1.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-2.png",
-//     category: "Design",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-3.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-4.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-5.png",
-//     category: "Software",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-6.png",
-//     category: "Design",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-7.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-8.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-//   {
-//     img: "/images/blog-9.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//   },
-// ];
-
 import { useEffect, useState } from "react";
+import { SearchContext } from "@/provider/search-provider";
+import React, { useContext } from "react";
 
 const AllBlog = () => {
-  const [articles, setArticles] = useState([]);
-  const [count, setCount] = useState(9);
-  const getArticleData = async () => {
-    const response = await fetch(
-      `https://dev.to/api/articles?per_page=${count}`
-    );
-    const data = await response.json();
-    setArticles(data);
-    // console.log("data", data)
-  };
-
-  useEffect(() => {
-    getArticleData();
-  }, [count]);
+  const { articles, count, setCount } = useContext(SearchContext);
   return (
     <section className=" max-w-[1240px] m-auto  p-8 my-9">
       <h5 className="text-2xl text-[#181A2A] font-bold">All Blog Post</h5>

@@ -1,29 +1,5 @@
 import React from "react";
 import TrendingMap from "./TrendingMap";
-
-// const trendingBlogs = [
-//   {
-//     img: "/images/blog-2.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//   },
-//   {
-//     img: "/images/blog-2.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//   },
-//   {
-//     img: "/images/blog-2.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//   },
-//   {
-//     img: "/images/blog-2.png",
-//     category: "Technology",
-//     text: "The Impact of Technology on the Workplace: How Technology is Changing",
-//   },
-// ];
-
 import { useEffect, useState } from "react";
 
 const Trending = () => {

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const Mainblog = () => {
   const [articles, setArticles] = useState([]);
   const getArticleData = async () => {
-    const response = await fetch("https://dev.to/api/articles");
+    const response = await fetch("https://dev.to/api/articles?per_page=10");
     const data = await response.json();
     setArticles(data);
   };
@@ -43,20 +43,24 @@ const Mainblog = () => {
         <CiSquareChevRight
           size={40}
           color="gray"
-          onClick={() => setArticleIndex(articleIndex + 1)}
+          onClick={() => {
+            if (articleIndex < 9) {
+              setArticleIndex(articleIndex + 1);
+            } else {
+              setArticleIndex(articleIndex);
+            }
+          }}
         />
         <CiSquareChevLeft
           size={40}
           color="gray"
-          onClick={() =>
-            function () {
-              if (articleIndex > 0) {
-                setArticleIndex(articleIndex - 1);
-              } else {
-                setArticleIndex(articleIndex);
-              }
+          onClick={() => {
+            if (articleIndex > 0) {
+              setArticleIndex(articleIndex - 1);
+            } else {
+              setArticleIndex(articleIndex);
             }
-          }
+          }}
         />
       </div>
     </section>

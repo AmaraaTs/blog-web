@@ -1,8 +1,12 @@
+import { SearchContext } from "@/provider/search-provider";
 import Link from "next/link";
+import { useContext } from "react";
 
 const AllBlogMap = ({ allBlog }) => {
+  const { searchValue } = useContext(SearchContext);
   return (
     <div className="grid grid-cols-3 gap-5 mt-8">
+      {/* <h2>Hailt: {searchValue}</h2> */}
       {allBlog.map((blog) => (
         <Link href={"/blog/" + blog.id}>
           <div className=" w-[392px]  p-4 border-[1px] border-[#E8E8EA] rounded-xl">

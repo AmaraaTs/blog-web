@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
+import { SearchContext } from "@/provider/search-provider";
 
 const Header = () => {
+  const { setSearchValue } = useContext(SearchContext);
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+  };
   return (
     <header className="flex max-w-[1240px] m-auto justify-between p-8 items-center">
       <img src="./images/metaLogo.png" alt="logo" className="w-[158px] h-8" />
@@ -22,7 +27,7 @@ const Header = () => {
           type="text"
           placeholder="Search"
           className="border border-solid bg-[#F4F4F5] rounded-[5px] pl-4 pt-2 pr-2 pb-2 w-[166px]"
-          // onChange={searchValue}
+          onChange={handleChange}
         />
         <CiSearch className="absolute left-[140px] bottom-[15px]" size={16} />
       </div>
