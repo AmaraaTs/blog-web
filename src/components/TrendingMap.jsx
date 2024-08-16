@@ -7,12 +7,19 @@ const TrendingMap = ({ trendingBlog }) => {
         <Link href={"/blog/" + blog.id}>
           <div className="relative h-[320px] w-[260px]">
             <div className="h-[320px] w-[260px]  rounded-xl flex">
-              <img
-                // style={{ backgroundPosition: "center", backgroundSize: "contain" }}
-                src={blog.cover_image}
-                alt="photo"
-                className="w-full h-full bg-cover bg-center bg-no-repeat rounded-xl"
-              />
+              {blog.cover_image == null ? (
+                <img
+                  src="/images/empty.jpg"
+                  alt="photo"
+                  className="w-full h-full bg-cover bg-center bg-no-repeat rounded-xl"
+                />
+              ) : (
+                <img
+                  src={blog.cover_image}
+                  alt="photo"
+                  className="w-full h-full bg-cover bg-center bg-no-repeat rounded-xl"
+                />
+              )}
               <div className="absolute bg-black opacity-40 h-full w-full rounded-xl"></div>
             </div>
             <div className="absolute bottom-7 left-7 right-7 truncate ">
