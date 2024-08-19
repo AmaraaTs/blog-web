@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const Mainblog = () => {
   const [articles, setArticles] = useState([]);
+
   const getArticleData = async () => {
     const response = await fetch("https://dev.to/api/articles?per_page=10");
     const data = await response.json();
