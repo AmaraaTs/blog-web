@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const Mainblog = () => {
   const [articles, setArticles] = useState([]);
+
   const getArticleData = async () => {
     const response = await fetch("https://dev.to/api/articles?per_page=10");
     const data = await response.json();
@@ -19,11 +20,19 @@ const Mainblog = () => {
     <section className="relative max-w-[1240px] m-auto  p-8 ">
       <div>
         <div className="relative h-[600px]">
-          <img
-            src={articles[articleIndex]?.cover_image}
-            alt="photo"
-            className="w-full h-full rounded-xl"
-          />
+          {articles[articleIndex]?.cover_image === null ? (
+            <img
+              src="/images/empty.jpg"
+              alt="photo"
+              className="w-full h-full rounded-xl bg-contain"
+            />
+          ) : (
+            <img
+              src={articles[articleIndex]?.cover_image}
+              alt="photo"
+              className="w-full h-full rounded-xl"
+            />
+          )}
           <div className="absolute w-full h-full bg-black opacity-40 bottom-0 rounded-xl"></div>
         </div>
         <div className="absolute bottom-[85px] left-[43px] bg-white rounded-xl p-10 border-[1px] border-[#E8E8EA] w-[598px]">

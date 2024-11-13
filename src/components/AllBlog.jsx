@@ -5,7 +5,8 @@ import { SearchContext } from "@/provider/search-provider";
 import React, { useContext } from "react";
 
 const AllBlog = () => {
-  const { articles, count, setCount } = useContext(SearchContext);
+  const { count, setCount, setPerPage } = useContext(SearchContext);
+
   return (
     <section className=" max-w-[1240px] m-auto  p-8 my-9">
       <h5 className="text-2xl text-[#181A2A] font-bold">All Blog Post</h5>
@@ -23,12 +24,15 @@ const AllBlog = () => {
         </Link>
       </div>
       <div className="mt-[30px]">
-        <AllBlogMap allBlog={articles} />
+        <AllBlogMap />
       </div>
       <div className="flex justify-center mt-[100px]">
         <button
           className="border-[1px] border-[#696A754D] px-5 py-3 rounded-md text-base text-[#696A75]"
-          onClick={() => setCount(count + 3)}
+          onClick={() => {
+            setPerPage(3);
+            setCount(count + 1);
+          }}
         >
           Load More
         </button>
